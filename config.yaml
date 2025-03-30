@@ -8,34 +8,31 @@ teams:
   - name: "CHALLENGERS"
     color: "#10b981"  # Brighter green
     captain: "DK"
-    pick: 2  # First pick
+    pick: 5
   - name: "ALL STARS"
     color: "#facc15"  # Vibrant yellow
     captain: "AJITH"
-    pick: 1  # Second pick
+    pick: 2
   - name: "HAWKS"
     color: "#06b6d4"  # Bright teal
     captain: "BALA"
-    pick: 3  # Third pick
+    pick: 3
   - name: "WARRIORS"
     color: "#8b5cf6"  # Bright purple
     captain: "GIRISH"
-    pick: 4  # Fourth pick
+    pick: 4
   - name: "KINGS"
-    color: "#f97316"  # Bright orange
+    color: "#f97316" # Bright orange
     captain: "ROHAN"
-    pick: 5  # Fifth pick
+    pick: 6
   - name: "TITANS"
     color: "#3b82f6"  # Bright blue
     captain: "AKSHAY"
-    pick: 6  # Sixth pick
+    pick: 7
   - name: "SPARTANS"
-    color: "#ef4444"  # Bright red
+    color: "#ef4444" # Bright red
     captain: "NIKHIL"
-    pick: 7  # Seventh pick
-
-draft:
-  rounds: 14  # Number of rounds excluding captains
+    pick: 1
   
 players:
   - "Himanshu"
@@ -135,3 +132,6 @@ players:
   - "Nikhil"
   - "Omkar"
   - "Pradeep"
+  - "Prashant"
+  - "Prathap"
+  - "Paparap"
