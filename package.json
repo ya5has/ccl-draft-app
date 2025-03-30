@@ -1,7 +1,7 @@
 {
-  "name": "ccl-draft",
+  "name": "ccl-draft-app",
   "version": "1.0.0",
-  "description": "CCL 2025 Draft Application",
+  "description": "Draft Application",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
