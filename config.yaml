@@ -34,7 +34,7 @@ teams:
     captain: "NIKHIL"
     pick: 1
   
-players:
+players: # Ideally less than 15 characters
   - "Himanshu"
   - "Raj"
   - "Akhil"
@@ -54,7 +54,7 @@ players:
   - "Saurav"
   - "Shyam"
   - "Vinay"
-  - "Lokesh"
+  - "Lokesh Vishwanath"
   - "Manoj"
   - "Praveen"
   - "Raghu"

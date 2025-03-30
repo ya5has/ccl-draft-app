@@ -13,8 +13,8 @@
   <div class="container">
     <div class="header">
       <div class="header-left">
-        <img src="/ccl-logo.png" alt="CCL Logo" class="logo">
-        <h1>CCL 2025 Draft</h1>
+        <img class="logo">
+        <h1></h1>
       </div>
       <div class="controls">
         <button class="control-btn undo-btn" id="undoButton">Undo Last Pick</button>
@@ -34,7 +34,9 @@
       </div>
       
       <div class="player-pool-container">
-        <h2 class="player-pool-title">Player Pool</h2>
+        <h2 class="player-pool-title">
+          Player Pool&nbsp;<span id="playerCount"></span>
+        </h2>
         <div class="player-pool" id="playerPool">
         </div>
       </div>
@@ -49,4 +51,4 @@
   
   <script src="/draft.js"></script>
 </body>
-</html> 
+</html>

@@ -28,7 +28,23 @@ document.addEventListener('DOMContentLoaded', async function() {
   }
   
   function initializeDraft() {
-    document.title = config.application.title;
+    // Set document title (browser tab)
+    if (config.application && config.application.title) {
+      document.title = config.application.title;
+    } else {
+      document.title = "Draft"; // Default browser title if none specified
+    }
+
+    // Set the H1 title in the header
+    const headerTitle = document.querySelector('.header-left h1');
+    if (headerTitle) {
+      if (config.application && config.application.title) {
+        headerTitle.textContent = config.application.title; // Set H1 text from config
+      } else {
+        headerTitle.textContent = ''; // Keep H1 empty if no title in config
+        // Optionally hide it completely: headerTitle.style.display = 'none';
+      }
+    }
 
     // Apply logo if specified
     if (config.application.logo) {
@@ -157,6 +173,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Create player pool
     renderPlayerPool();
+    updatePlayerPoolCount();
     
     // Highlight the next pick
     highlightNextPick();
@@ -224,6 +241,14 @@ document.addEventListener('DOMContentLoaded', async function() {
       playerItem.addEventListener('click', () => selectPlayer(player));
       playerPool.appendChild(playerItem);
     });
+    updatePlayerPoolCount();
+  }
+  
+  function updatePlayerPoolCount() {
+    const playerCountSpan = document.getElementById('playerCount');
+    if (playerCountSpan) {
+      playerCountSpan.textContent = `(${draftState.remainingPlayers.length})`;
+    }
   }
   
   function highlightNextPick() {
@@ -301,6 +326,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Render the updated player pool
     renderPlayerPool();
+    updatePlayerPoolCount();
     
     // Highlight the next pick
     setTimeout(highlightNextPick, 100);
@@ -335,6 +361,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Update UI
     renderPlayerPool();
+    updatePlayerPoolCount();
     highlightNextPick();
   }
   
@@ -360,6 +387,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     
     // Update UI
     renderPlayerPool();
+    updatePlayerPoolCount();
     highlightNextPick();
   }
   
