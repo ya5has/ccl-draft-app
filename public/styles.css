@@ -1,0 +1,448 @@
+/* Copy all CSS from the original app.html file */
+:root {
+  --primary-color: #64748b;
+  --primary-dark: #475569;
+  --accent-color: #94a3b8;
+  --accent-light: rgba(148, 163, 184, 0.2);
+  --surface-color: #0f172a;
+  --background-color: #020617;
+  --card-color: #1e293b;
+  --text-color: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --border-color: rgba(148, 163, 184, 0.15);
+  --success-color: #10b981;
+  --error-color: #ef4444;
+  --border-radius: 12px;
+  --border-radius-sm: 8px;
+  --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+  --spacing: 16px;
+  --header-height: 70px;
+  --footer-height: 44px;
+  --row-height: 36px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - var(--footer-height));
+  padding: var(--spacing);
+  gap: var(--spacing);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 var(--spacing);
+  background: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9));
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logo {
+  height: 44px;
+  border-radius: 8px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.logo:after {
+  content: none;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  background: linear-gradient(45deg, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  text-transform: uppercase;
+  position: relative;
+  text-shadow: 0 0 20px rgba(148, 163, 184, 0.4);
+}
+
+.header h1:after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #94a3b8, transparent);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+}
+
+.control-btn {
+  padding: 8px 16px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.control-btn:before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.undo-btn:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6'/%3E%3C/svg%3E");
+}
+
+.reset-btn:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15'/%3E%3C/svg%3E");
+}
+
+/* Add snapshot button icon */
+.snapshot-btn:before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M15 13a3 3 0 11-6 0 3 3 0 016 0z'/%3E%3C/svg%3E");
+}
+
+.control-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+}
+
+.undo-btn {
+  background: var(--primary-color);
+}
+
+.undo-btn:hover {
+  background: var(--primary-dark);
+}
+
+.draft-section {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: var(--spacing);
+  overflow: hidden;
+}
+
+.draft-container {
+  width: 100%;
+  display: flex;
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  height: 75%;
+}
+
+.rounds-column {
+  width: 80px;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.02);
+  border-right: 1px solid var(--border-color);
+}
+
+.round-label {
+  height: var(--row-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.025em;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Make the first row (Teams row) taller */
+.round-label:first-child,
+.team-header {
+  height: 50px; /* Increased from var(--row-height) which is 36px */
+  font-size: 1rem; /* Optional: slightly larger font for better proportions */
+}
+
+/* Ensure Captain row matches Round styling */
+.round-label:nth-child(2) {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.025em;
+}
+
+.captain-cell,
+.player-cell {
+  height: var(--row-height);
+}
+
+.teams-container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.team-column {
+  flex: 1;
+  min-width: 110px;
+  border-right: 1px solid var(--border-color);
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-column.active {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  z-index: 1;
+  background: rgba(34, 211, 238, 0.05);
+}
+
+.team-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+  transition: all 0.2s ease-out;
+}
+
+.team-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.team-captain {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.team-captain:before {
+  content: "Captain: ";
+  opacity: 0.7;
+}
+
+.team-pick-number {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: var(--accent-color);
+  color: var(--background-color);
+  border-radius: 9999px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.player-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 6px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 0.82rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.player-cell:empty {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+.player-pool-container {
+  width: 100%;
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 25%;
+  max-width: none;
+}
+
+.player-pool-title {
+  padding: 10px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  color: var(--text-color);
+  text-align: left;
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+}
+
+.player-pool-title:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2322d3ee'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.player-pool {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 12px;
+  overflow-y: auto;
+  align-content: flex-start;
+}
+
+.player-pool::-webkit-scrollbar {
+  width: 8px;
+}
+
+.player-pool::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.player-pool::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+}
+
+.player-pool-item {
+  background: var(--card-color);
+  border: 1px solid var(--border-color);
+  padding: 6px 12px;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.78rem;
+  position: relative;
+  overflow: hidden;
+  color: var(--text-color);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.player-pool-item:hover {
+  background: #334155;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.round-highlight {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f8fafc;
+  font-weight: 600;
+  position: relative;
+}
+
+.round-highlight::after {
+  content: "→";
+  position: absolute;
+  right: 8px;
+  opacity: 0.8;
+}
+
+.new-player {
+  background: transparent;
+}
+
+.news-ticker {
+  height: var(--footer-height);
+  background-color: var(--surface-color);
+  color: var(--text-color);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+}
+
+.ticker-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+  padding-left: 100%;
+  font-size: 0.875rem;
+}
+
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ... rest of the CSS ... */
+
+.captain-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 6px;
+  border-bottom: 1px solid var(--border-color);
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background-color: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.captain-cell::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: currentColor;
+  opacity: 0.6;
+}
+
+.team-column.active .team-header {
+  background: rgba(34, 211, 238, 0.1);
+  box-shadow: 0 0 15px rgba(34, 211, 238, 0.2);
+} 

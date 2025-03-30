@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCL 2025 Draft</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-yaml/4.1.0/js-yaml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-left">
+        <img src="/ccl-logo.png" alt="CCL Logo" class="logo">
+        <h1>CCL 2025 Draft</h1>
+      </div>
+      <div class="controls">
+        <button class="control-btn undo-btn" id="undoButton">Undo Last Pick</button>
+        <button class="control-btn reset-btn" id="resetButton">Reset Draft</button>
+      </div>
+    </div>
+    
+    <div class="draft-section">
+      <div class="draft-container">
+        <div class="rounds-column">
+          <div class="round-label">Teams</div>
+          <div class="round-label">Captain</div>
+        </div>
+        
+        <div class="teams-container" id="teamsContainer">
+        </div>
+      </div>
+      
+      <div class="player-pool-container">
+        <h2 class="player-pool-title">Player Pool</h2>
+        <div class="player-pool" id="playerPool">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="news-ticker">
+    <div class="ticker-content" id="ticker">
+      Welcome to CCL 2025 Draft! Click on a player from the pool to assign to the next team in the draft order.
+    </div>
+  </div>
+  
+  <script src="/draft.js"></script>
+</body>
+</html> 
