@@ -475,3 +475,7 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-dark);
 }
+
+#resetButton {
+  display: none;
+}

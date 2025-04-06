@@ -1,11 +1,101 @@
 {
-  "currentRound": 0,
-  "currentTeamIndex": 1,
+  "currentRound": 2,
+  "currentTeamIndex": 5,
   "picks": [
     {
-      "player": "Arslan Bhangu",
+      "player": "Arvind R",
       "round": 1,
       "team": 6
+    },
+    {
+      "player": "Ashly",
+      "round": 1,
+      "team": 1
+    },
+    {
+      "player": "Atul Singh",
+      "round": 1,
+      "team": 2
+    },
+    {
+      "player": "Babar Bashir",
+      "round": 1,
+      "team": 3
+    },
+    {
+      "player": "Balaji S",
+      "round": 1,
+      "team": 0
+    },
+    {
+      "player": "Bhakta",
+      "round": 1,
+      "team": 4
+    },
+    {
+      "player": "Bhavadeep",
+      "round": 1,
+      "team": 5
+    },
+    {
+      "player": "Brajesh Singh",
+      "round": 2,
+      "team": 5
+    },
+    {
+      "player": "Brijesh",
+      "round": 2,
+      "team": 4
+    },
+    {
+      "player": "Bunpreet Singh",
+      "round": 2,
+      "team": 0
+    },
+    {
+      "player": "Chaitanya T",
+      "round": 2,
+      "team": 3
+    },
+    {
+      "player": "Chetan",
+      "round": 2,
+      "team": 2
+    },
+    {
+      "player": "Chirag Vijay",
+      "round": 2,
+      "team": 1
+    },
+    {
+      "player": "Debashis C",
+      "round": 2,
+      "team": 6
+    },
+    {
+      "player": "Manivannan K",
+      "round": 3,
+      "team": 4
+    },
+    {
+      "player": "Mario Pandian",
+      "round": 3,
+      "team": 0
+    },
+    {
+      "player": "Elango T",
+      "round": 3,
+      "team": 3
+    },
+    {
+      "player": "Durairaj Kumar",
+      "round": 3,
+      "team": 2
+    },
+    {
+      "player": "Ganesh Koushic",
+      "round": 3,
+      "team": 1
     }
   ],
   "remainingPlayers": [
@@ -15,26 +105,10 @@
     "Ajay Majethia",
     "Amanpreet Singh",
     "Antony",
-    "Arvind R",
-    "Ashly",
-    "Atul Singh",
-    "Babar Bashir",
-    "Balaji S",
-    "Bhakta",
-    "Bhavadeep",
-    "Brajesh Singh",
-    "Brijesh",
-    "Bunpreet Singh",
-    "Chaitanya T",
-    "Chetan",
-    "Chirag Vijay",
-    "Debashis C",
+    "Arslan Bhangu",
     "Dev Bogiatoo",
     "Dhaval Padia",
-    "Durairaj Kumar",
-    "Elango T",
     "Eric Sylvester",
-    "Ganesh Koushic",
     "Gaurav Gaud",
     "Gopal Kallure",
     "Govinda Raju",
@@ -50,8 +124,6 @@
     "Krishna",
     "Kumar Devasish",
     "Mahee",
-    "Manivannan K",
-    "Mario Pandian",
     "Monica Schmidt",
     "Nadeem",
     "Nandeesh",
@@ -230,5 +302,5 @@
       2
     ]
   ],
-  "lastModified": 1743922237379
+  "lastModified": 1743922430004
 }
