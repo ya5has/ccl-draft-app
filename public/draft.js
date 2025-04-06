@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', async function() {
     currentTeamIndex: 0,
     picks: [],
     remainingPlayers: [],
-    draftOrder: []
+    draftOrder: [],
+    lastModified: Date.now()
   };
   
   // Load configuration from YAML
@@ -17,7 +18,9 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
     const yamlText = await response.text();
     config = jsyaml.load(yamlText);
+    await loadDraftState();
     initializeDraft();
+    startPeriodicSync();
   } catch (error) {
     console.error('Error loading configuration:', error);
     document.body.innerHTML = `
@@ -26,7 +29,69 @@ document.addEventListener('DOMContentLoaded', async function() {
         <p>${error.message}</p>
       </div>`;
   }
-  
+
+  async function saveDraftState() {
+    try {
+      const stateToSave = { ...draftState, lastModified: Date.now() };
+      await fetch('/api/save-state', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(stateToSave)
+      });
+    } catch (error) {
+      console.error('Error saving draft state:', error);
+    }
+  }
+
+  async function loadDraftState() {
+    try {
+      const response = await fetch('/api/load-state');
+      if (response.ok) {
+        const savedState = await response.json();
+        if (savedState && savedState.lastModified > draftState.lastModified) {
+          draftState = savedState;
+          return true;
+        }
+      }
+      return false;
+    } catch (error) {
+      console.error('Error loading draft state:', error);
+      return false;
+    }
+  }
+
+  async function refreshUI() {
+    const stateChanged = await loadDraftState();
+    if (stateChanged) {
+      renderPlayerPool();
+      updatePlayerPoolCount();
+      
+      // Clear and rebuild team rosters
+      document.querySelectorAll('.player-cell').forEach(cell => {
+        if (cell.dataset.round) {  // Skip captain cells
+          cell.textContent = '';
+        }
+      });
+
+      // Rebuild team rosters from picks
+      draftState.picks.forEach(pick => {
+        const cell = document.querySelector(`.player-cell[data-round="${pick.round}"][data-team="${pick.team}"]`);
+        if (cell) {
+          cell.textContent = pick.player;
+        }
+      });
+
+      highlightNextPick();
+    }
+  }
+
+  function startPeriodicSync() {
+    // Refresh UI every 3 seconds
+    setInterval(refreshUI, 3000);
+  }
+
   function initializeDraft() {
     // Set document title (browser tab)
     if (config.application && config.application.title) {
@@ -310,85 +375,93 @@ document.addEventListener('DOMContentLoaded', async function() {
       round: currentRoundIndex + 1,
       team: currentTeamIndex
     });
-    
-    // Remove player from pool
-    draftState.remainingPlayers = draftState.remainingPlayers.filter(p => p !== playerName);
-    
-    // Update the UI
-    updateTeamRoster(playerName, currentRoundIndex + 1, currentTeamIndex);
-    
-    // Move to next pick
-    draftState.currentTeamIndex++;
-    if (draftState.currentTeamIndex >= config.teams.length) {
-      draftState.currentRound++;
-      draftState.currentTeamIndex = 0;
+
+    // Remove player from remaining players
+    const playerIndex = draftState.remainingPlayers.indexOf(playerName);
+    if (playerIndex > -1) {
+      draftState.remainingPlayers.splice(playerIndex, 1);
     }
-    
-    // Render the updated player pool
+
+    // Update UI
+    const cell = document.querySelector(`.player-cell[data-round="${currentRoundIndex + 1}"][data-team="${currentTeamIndex}"]`);
+    if (cell) {
+      cell.textContent = playerName;
+    }
+
     renderPlayerPool();
     updatePlayerPoolCount();
+
+    // Move to next pick
+    draftState.currentTeamIndex++;
+    if (draftState.currentTeamIndex >= draftState.draftOrder[currentRoundIndex].length) {
+      draftState.currentTeamIndex = 0;
+      draftState.currentRound++;
+    }
+
+    highlightNextPick();
     
-    // Highlight the next pick
-    setTimeout(highlightNextPick, 100);
+    // Save state after pick
+    saveDraftState();
   }
-  
-  function updateTeamRoster(playerName, round, teamIndex) {
-    const cell = document.querySelector(`.player-cell[data-round="${round}"][data-team="${teamIndex}"]`);
-    cell.textContent = playerName;
-    cell.style.color = config.teams[teamIndex].color;
-  }
-  
+
   function undoLastPick() {
     if (draftState.picks.length === 0) return;
-    
-    // Get the last pick
+
     const lastPick = draftState.picks.pop();
-    
-    // Add player back to pool
     draftState.remainingPlayers.push(lastPick.player);
     
-    // Clear the team cell
-    const cell = document.querySelector(`.player-cell[data-round="${lastPick.round}"][data-team="${lastPick.team}"]`);
-    cell.textContent = '';
-    
-    // Move draft state back
-    if (draftState.currentTeamIndex === 0) {
+    // Move back one pick
+    draftState.currentTeamIndex--;
+    if (draftState.currentTeamIndex < 0) {
       draftState.currentRound--;
-      draftState.currentTeamIndex = config.teams.length - 1;
-    } else {
-      draftState.currentTeamIndex--;
+      draftState.currentTeamIndex = draftState.draftOrder[draftState.currentRound].length - 1;
     }
-    
-    // Update UI
+
+    // Clear the cell
+    const cell = document.querySelector(`.player-cell[data-round="${lastPick.round}"][data-team="${lastPick.team}"]`);
+    if (cell) {
+      cell.textContent = '';
+    }
+
     renderPlayerPool();
     updatePlayerPoolCount();
     highlightNextPick();
+    
+    // Save state after undo
+    saveDraftState();
   }
-  
+
   function confirmResetDraft() {
     if (confirm('Are you sure you want to reset the entire draft? This action cannot be undone.')) {
       resetDraft();
     }
   }
-  
+
   function resetDraft() {
-    // Clear all team cells except captains
-    document.querySelectorAll('.player-cell').forEach(cell => {
-      if (cell.dataset.round) {
-        cell.textContent = '';
+    draftState = {
+      currentRound: 0,
+      currentTeamIndex: 0,
+      picks: [],
+      remainingPlayers: [...config.players],
+      draftOrder: createDraftOrder(config.rounds),
+      lastModified: Date.now()
+    };
+
+    // Clear all team rosters
+    const teamColumns = document.querySelectorAll('.team-column');
+    teamColumns.forEach(column => {
+      const roster = column.querySelector('.team-roster');
+      while (roster.firstChild) {
+        roster.removeChild(roster.firstChild);
       }
     });
-    
-    // Reset draft state
-    draftState.currentRound = 0;
-    draftState.currentTeamIndex = 0;
-    draftState.picks = [];
-    draftState.remainingPlayers = [...config.players];
-    
-    // Update UI
+
     renderPlayerPool();
     updatePlayerPoolCount();
     highlightNextPick();
+    
+    // Save state after reset
+    saveDraftState();
   }
   
   function takeSnapshot() {

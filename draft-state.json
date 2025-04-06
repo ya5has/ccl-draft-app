@@ -1,0 +1,418 @@
+{
+  "currentRound": 6,
+  "currentTeamIndex": 5,
+  "picks": [
+    {
+      "player": "Gaurav Gaud",
+      "round": 1,
+      "team": 6
+    },
+    {
+      "player": "Durairaj Kumar",
+      "round": 1,
+      "team": 1
+    },
+    {
+      "player": "Arslan Bhangu",
+      "round": 1,
+      "team": 2
+    },
+    {
+      "player": "Yashas Reddy",
+      "round": 1,
+      "team": 3
+    },
+    {
+      "player": "Vikas Kalia",
+      "round": 1,
+      "team": 0
+    },
+    {
+      "player": "Vishal C",
+      "round": 1,
+      "team": 4
+    },
+    {
+      "player": "Vijay Ramesh",
+      "round": 1,
+      "team": 5
+    },
+    {
+      "player": "Chetan",
+      "round": 2,
+      "team": 5
+    },
+    {
+      "player": "Chirag Vijay",
+      "round": 2,
+      "team": 4
+    },
+    {
+      "player": "Debashis C",
+      "round": 2,
+      "team": 0
+    },
+    {
+      "player": "Dev Bogiatoo",
+      "round": 2,
+      "team": 3
+    },
+    {
+      "player": "Dhaval Padia",
+      "round": 2,
+      "team": 2
+    },
+    {
+      "player": "Elango T",
+      "round": 2,
+      "team": 1
+    },
+    {
+      "player": "Eric Sylvester",
+      "round": 2,
+      "team": 6
+    },
+    {
+      "player": "Ganesh Koushic",
+      "round": 3,
+      "team": 4
+    },
+    {
+      "player": "Gopal Kallure",
+      "round": 3,
+      "team": 0
+    },
+    {
+      "player": "Govinda Raju",
+      "round": 3,
+      "team": 3
+    },
+    {
+      "player": "Gowrishankar S",
+      "round": 3,
+      "team": 2
+    },
+    {
+      "player": "Harsha",
+      "round": 3,
+      "team": 1
+    },
+    {
+      "player": "Hemin Patel",
+      "round": 3,
+      "team": 6
+    },
+    {
+      "player": "Abdul",
+      "round": 3,
+      "team": 5
+    },
+    {
+      "player": "Abey Eapen",
+      "round": 4,
+      "team": 0
+    },
+    {
+      "player": "Abhilash",
+      "round": 4,
+      "team": 3
+    },
+    {
+      "player": "Ajay Majethia",
+      "round": 4,
+      "team": 2
+    },
+    {
+      "player": "Amanpreet Singh",
+      "round": 4,
+      "team": 1
+    },
+    {
+      "player": "Antony",
+      "round": 4,
+      "team": 6
+    },
+    {
+      "player": "Arvind R",
+      "round": 4,
+      "team": 5
+    },
+    {
+      "player": "Ashly",
+      "round": 4,
+      "team": 4
+    },
+    {
+      "player": "Atul Singh",
+      "round": 5,
+      "team": 3
+    },
+    {
+      "player": "Babar Bashir",
+      "round": 5,
+      "team": 2
+    },
+    {
+      "player": "Balaji S",
+      "round": 5,
+      "team": 1
+    },
+    {
+      "player": "Bhakta",
+      "round": 5,
+      "team": 6
+    },
+    {
+      "player": "Bhavadeep",
+      "round": 5,
+      "team": 5
+    },
+    {
+      "player": "Brajesh Singh",
+      "round": 5,
+      "team": 4
+    },
+    {
+      "player": "Brijesh",
+      "round": 5,
+      "team": 0
+    },
+    {
+      "player": "Bunpreet Singh",
+      "round": 6,
+      "team": 2
+    },
+    {
+      "player": "Chaitanya T",
+      "round": 6,
+      "team": 1
+    },
+    {
+      "player": "Himanshu S",
+      "round": 6,
+      "team": 6
+    },
+    {
+      "player": "Ibrahim Khan",
+      "round": 6,
+      "team": 5
+    },
+    {
+      "player": "Inderdip Singh",
+      "round": 6,
+      "team": 4
+    },
+    {
+      "player": "Jay",
+      "round": 6,
+      "team": 0
+    },
+    {
+      "player": "Jitendra Kumar",
+      "round": 6,
+      "team": 3
+    },
+    {
+      "player": "Krishna",
+      "round": 7,
+      "team": 1
+    },
+    {
+      "player": "Kumar Devasish",
+      "round": 7,
+      "team": 6
+    },
+    {
+      "player": "Mahee",
+      "round": 7,
+      "team": 5
+    },
+    {
+      "player": "Manivannan K",
+      "round": 7,
+      "team": 4
+    },
+    {
+      "player": "Mario Pandian",
+      "round": 7,
+      "team": 0
+    }
+  ],
+  "remainingPlayers": [
+    "Khalil",
+    "Monica Schmidt",
+    "Nadeem",
+    "Nandeesh",
+    "Narendrag",
+    "Naresh K",
+    "Naveen",
+    "Naveen V",
+    "Nirmalraj S",
+    "Nitin Chauhan",
+    "Parin Shah",
+    "Partho BC",
+    "Parvath Reddy",
+    "Pranjal Malav",
+    "Prash",
+    "Prashant P",
+    "Prashanth M",
+    "Raja sekhar",
+    "Rajesh",
+    "Rajkumar M",
+    "Rakesh",
+    "Ramon Howe",
+    "Rehan",
+    "Rohit Jain",
+    "Rohullah M",
+    "Rony",
+    "Sai Vamshi",
+    "Saipreetham",
+    "Sakhi Rahman",
+    "Sameer T",
+    "Sanath Shetty",
+    "Sandeep C",
+    "Sateesh",
+    "Satya T",
+    "Shaizullah M",
+    "Sikandar AD",
+    "Simranjeet S",
+    "Siva K",
+    "Subhashish C",
+    "Sudin Huddar",
+    "Vaidya TR",
+    "Venkatraman K",
+    "Vignesh R",
+    "Vignesh SR",
+    "Yasar Ijaz",
+    "Yuva Raju C"
+  ],
+  "draftOrder": [
+    [
+      6,
+      1,
+      2,
+      3,
+      0,
+      4,
+      5
+    ],
+    [
+      5,
+      4,
+      0,
+      3,
+      2,
+      1,
+      6
+    ],
+    [
+      4,
+      0,
+      3,
+      2,
+      1,
+      6,
+      5
+    ],
+    [
+      0,
+      3,
+      2,
+      1,
+      6,
+      5,
+      4
+    ],
+    [
+      3,
+      2,
+      1,
+      6,
+      5,
+      4,
+      0
+    ],
+    [
+      2,
+      1,
+      6,
+      5,
+      4,
+      0,
+      3
+    ],
+    [
+      1,
+      6,
+      5,
+      4,
+      0,
+      3,
+      2
+    ],
+    [
+      6,
+      5,
+      4,
+      0,
+      3,
+      2,
+      1
+    ],
+    [
+      5,
+      4,
+      0,
+      3,
+      2,
+      1,
+      6
+    ],
+    [
+      4,
+      0,
+      3,
+      2,
+      1,
+      6,
+      5
+    ],
+    [
+      0,
+      3,
+      2,
+      1,
+      6,
+      5,
+      4
+    ],
+    [
+      3,
+      2,
+      1,
+      6,
+      5,
+      4,
+      0
+    ],
+    [
+      2,
+      1,
+      6,
+      5,
+      4,
+      0,
+      3
+    ],
+    [
+      1,
+      6,
+      5,
+      4,
+      0,
+      3,
+      2
+    ]
+  ],
+  "lastModified": 1743916942790
+}
