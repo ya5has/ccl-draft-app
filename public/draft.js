@@ -296,7 +296,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     // Update ticker message
     const team = config.teams[currentTeamIndex];
     document.querySelector('.ticker-content').textContent = 
-      `Round ${currentRoundIndex + 1}: ${team.name} is now picking (Pick ${draftState.currentTeamIndex + 1})`;
+      `Round ${currentRoundIndex + 1}: ${team.name} is now picking (Pick number ${draftState.currentTeamIndex + 1})`;
   }
   
   function selectPlayer(playerName) {    
