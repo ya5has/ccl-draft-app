@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       document.querySelectorAll('.player-cell').forEach(cell => {
         if (cell.dataset.round) {  // Skip captain cells
           cell.textContent = '';
+          cell.style.color = '';
         }
       });
 
@@ -80,6 +81,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         const cell = document.querySelector(`.player-cell[data-round="${pick.round}"][data-team="${pick.team}"]`);
         if (cell) {
           cell.textContent = pick.player;
+          cell.style.color = config.teams[pick.team].color;
         }
       });
 
@@ -240,6 +242,15 @@ document.addEventListener('DOMContentLoaded', async function() {
     renderPlayerPool();
     updatePlayerPoolCount();
     
+    // Rebuild team rosters from picks
+    draftState.picks.forEach(pick => {
+      const cell = document.querySelector(`.player-cell[data-round="${pick.round}"][data-team="${pick.team}"]`);
+      if (cell) {
+        cell.textContent = pick.player;
+        cell.style.color = config.teams[pick.team].color;
+      }
+    });
+
     // Highlight the next pick
     highlightNextPick();
     
@@ -376,29 +387,29 @@ document.addEventListener('DOMContentLoaded', async function() {
       team: currentTeamIndex
     });
 
-    // Remove player from remaining players
-    const playerIndex = draftState.remainingPlayers.indexOf(playerName);
-    if (playerIndex > -1) {
-      draftState.remainingPlayers.splice(playerIndex, 1);
-    }
-
-    // Update UI
+    // Remove player from pool
+    draftState.remainingPlayers = draftState.remainingPlayers.filter(p => p !== playerName);
+    
+    // Update the UI
     const cell = document.querySelector(`.player-cell[data-round="${currentRoundIndex + 1}"][data-team="${currentTeamIndex}"]`);
     if (cell) {
       cell.textContent = playerName;
+      cell.style.color = config.teams[currentTeamIndex].color;
     }
-
-    renderPlayerPool();
-    updatePlayerPoolCount();
-
+    
     // Move to next pick
     draftState.currentTeamIndex++;
-    if (draftState.currentTeamIndex >= draftState.draftOrder[currentRoundIndex].length) {
-      draftState.currentTeamIndex = 0;
+    if (draftState.currentTeamIndex >= config.teams.length) {
       draftState.currentRound++;
+      draftState.currentTeamIndex = 0;
     }
-
-    highlightNextPick();
+    
+    // Render the updated player pool
+    renderPlayerPool();
+    updatePlayerPoolCount();
+    
+    // Highlight the next pick
+    setTimeout(highlightNextPick, 100);
     
     // Save state after pick
     saveDraftState();
@@ -421,6 +432,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const cell = document.querySelector(`.player-cell[data-round="${lastPick.round}"][data-team="${lastPick.team}"]`);
     if (cell) {
       cell.textContent = '';
+      cell.style.color = '';
     }
 
     renderPlayerPool();
