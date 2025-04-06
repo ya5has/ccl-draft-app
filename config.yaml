@@ -8,7 +8,7 @@ teams:
   - name: "CHALLENGERS"
     color: "#10b981"  # Brighter green
     captain: "DK"
-    pick: 5
+    pick: 1
   - name: "ALL STARS"
     color: "#facc15"  # Vibrant yellow
     captain: "AJITH"
@@ -20,19 +20,19 @@ teams:
   - name: "WARRIORS"
     color: "#8b5cf6"  # Bright purple
     captain: "GIRISH"
-    pick: 4
+    pick: 7
   - name: "KINGS"
     color: "#f97316" # Bright orange
     captain: "ROHAN"
-    pick: 6
+    pick: 4
   - name: "TITANS"
     color: "#3b82f6"  # Bright blue
     captain: "AKSHAY"
-    pick: 7
+    pick: 5
   - name: "SPARTANS"
     color: "#ef4444" # Bright red
     captain: "NIKHIL"
-    pick: 1
+    pick: 6
   
 players: # Ideally less than 15 characters
   - "Abdul"

@@ -592,7 +592,7 @@ document.addEventListener('DOMContentLoaded', async function() {
       bgDiv.style.backgroundSize = 'contain';
       bgDiv.style.backgroundPosition = 'center';
       bgDiv.style.backgroundRepeat = 'no-repeat';
-      bgDiv.style.opacity = '0.04';
+      bgDiv.style.opacity = '0.03';
       bgDiv.style.zIndex = '0';
       bgDiv.style.pointerEvents = 'none';
 
