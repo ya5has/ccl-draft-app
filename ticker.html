@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draft Status</title>
+    <style>
+        :root {
+            --surface-color: #0f172a;
+            --text-color: #f8fafc;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background-color: #020617;
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ticker-container {
+            position: fixed;
+            bottom: 30%;
+            left: 0;
+            width: 100%;
+            background-color: var(--surface-color);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .ticker-text {
+            font-size: 1.25rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="ticker-container">
+        <div class="ticker-text">Draft will be resumed shortly!</div>
+    </div>
+</body>
+</html>
