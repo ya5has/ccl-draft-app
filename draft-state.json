@@ -1,66 +1,11 @@
 {
-  "currentRound": 1,
-  "currentTeamIndex": 5,
+  "currentRound": 0,
+  "currentTeamIndex": 1,
   "picks": [
     {
-      "player": "Ganesh Koushic",
+      "player": "Arslan Bhangu",
       "round": 1,
       "team": 6
-    },
-    {
-      "player": "Gaurav Gaud",
-      "round": 1,
-      "team": 1
-    },
-    {
-      "player": "Gopal Kallure",
-      "round": 1,
-      "team": 2
-    },
-    {
-      "player": "Govinda Raju",
-      "round": 1,
-      "team": 3
-    },
-    {
-      "player": "Gowrishankar S",
-      "round": 1,
-      "team": 0
-    },
-    {
-      "player": "Hemin Patel",
-      "round": 1,
-      "team": 4
-    },
-    {
-      "player": "Himanshu S",
-      "round": 1,
-      "team": 5
-    },
-    {
-      "player": "Ibrahim Khan",
-      "round": 2,
-      "team": 5
-    },
-    {
-      "player": "Inderdip Singh",
-      "round": 2,
-      "team": 4
-    },
-    {
-      "player": "Jay",
-      "round": 2,
-      "team": 0
-    },
-    {
-      "player": "Krishna",
-      "round": 2,
-      "team": 3
-    },
-    {
-      "player": "Balaji S",
-      "round": 2,
-      "team": 2
     }
   ],
   "remainingPlayers": [
@@ -70,11 +15,11 @@
     "Ajay Majethia",
     "Amanpreet Singh",
     "Antony",
-    "Arslan Bhangu",
     "Arvind R",
     "Ashly",
     "Atul Singh",
     "Babar Bashir",
+    "Balaji S",
     "Bhakta",
     "Bhavadeep",
     "Brajesh Singh",
@@ -89,9 +34,20 @@
     "Durairaj Kumar",
     "Elango T",
     "Eric Sylvester",
+    "Ganesh Koushic",
+    "Gaurav Gaud",
+    "Gopal Kallure",
+    "Govinda Raju",
+    "Gowrishankar S",
     "Harsha",
+    "Hemin Patel",
+    "Himanshu S",
+    "Ibrahim Khan",
+    "Inderdip Singh",
+    "Jay",
     "Jitendra Kumar",
     "Khalil",
+    "Krishna",
     "Kumar Devasish",
     "Mahee",
     "Manivannan K",
@@ -274,5 +230,5 @@
       2
     ]
   ],
-  "lastModified": 1743921960940
+  "lastModified": 1743922237379
 }

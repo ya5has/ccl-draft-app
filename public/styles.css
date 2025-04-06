@@ -171,9 +171,8 @@ body {
   box-shadow: var(--box-shadow);
   overflow: auto;
   height: 75%;
-  resize: both;
+  resize: vertical;
   min-height: 200px;
-  min-width: 300px;
   scrollbar-width: thin;
   scrollbar-color: var(--primary-color) var(--surface-color);
 }
